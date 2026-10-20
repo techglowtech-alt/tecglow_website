@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#0b7a45">
   <meta name="description" content="TECGLOW Tech & Creative Solutions — Where Technology Meets Creativity. Graphic design, website development, coding, and digital solutions.">
   <title>TECGLOW Tech & Creative Solutions</title>
+  <link rel="manifest" href="./manifest.json">
   <link rel="icon" href="tecglow-logo.svg" type="image/svg+xml">
   <style>
     :root{--green:#087a45;--green2:#11a861;--dark:#10251b;--ink:#1b2b22;--muted:#64746b;--pale:#effaf3;--white:#fff;--line:#dce9df;--shadow:0 18px 50px rgba(8,65,37,.11)}
@@ -101,6 +102,13 @@
   <a class="whatsapp" href="https://wa.me/2348160833158" target="_blank" rel="noopener" aria-label="Chat with TECGLOW on WhatsApp">☏ WhatsApp</a>
 
   <script>
+     if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("./service-worker.js")
+        .catch(function (error) {
+          console.error("Service worker registration failed:", error);
+        });
+    });
     const WHATSAPP_NUMBER = "2348160833158";
     const starterProjects = [
       {id:"sample1",title:"Brand Identity Concept",category:"Graphics Design",description:"A sample showcase card for a logo or brand identity project.",emoji:"✦",sample:true},
